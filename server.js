@@ -4,7 +4,7 @@ var store = require('./wt-store')
 var port = 3000
 
 mockStore = (req, res, next) => {
-  req.webtaskContext = {store: store}
+  req.webtaskContext = {storage: store}
   next()
 }
 
