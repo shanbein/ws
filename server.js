@@ -1,8 +1,10 @@
 var app = require('./store')
+var store = require('./wt-store')
+
 var port = 3000
 
 mockStore = (req, res, next) => {
-  req.webtaskContext = 1
+  req.webtaskContext = {store: store}
   next()
 }
 
