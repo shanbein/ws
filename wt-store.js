@@ -1,39 +1,17 @@
-// var _data = new Map()
-// _data.set('a', 1)
-// _data.set('name', 'foo')
-
-var _data = []
-_data.push({name:"foo", age:"bar"})
+var _data
+// _data = {list: []}
+// _data.list.push({name:"foo", age:"bar"})
 
 var get = (cb) => {
-  var error = null
+  var err
   data = _data
-  return cb(error, data)
+  return cb(err, data)
 }
 
 var set = (data, cb) => {
-  var error = null
-  return cb(error)
+  var err
+  _data = data
+  return cb(err)
 }
 
-module.exports.get = get
-module.exports.set = set
-
-
-// get(function (error, data) {
-//     if (error) return cb(error);
-//     console.log(data)
-// })
-//
-// get(function (error, data) {
-//     if (error) return cb(error);
-//     set(data, function (error) {
-//         if (error) return cb(error);
-//         data.b = 2
-//     });
-// })
-//
-// get(function (error, data) {
-//     if (error) return cb(error);
-//     console.log(data)
-// })
+module.exports = {get: get, set: set}
